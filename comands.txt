@@ -1,0 +1,21 @@
+git config --global user.name 'Md-shefat-masum'
+
+git config --global user.email 'myphoto240@gmail.com'
+
+git add .  (this command all all files)
+
+git branch new-branch-name ( add new branch to git hub )
+
+git checkout branch-name ( changing the git branch )
+
+git commit -m 'commit message' ( commit file with a message )
+
+git merge new-mergename ( then click 'i' and write 'Added baranch-name' )
+
+git remote add origin https://github.com/Md-shefat-masum/test-git.git ( add git hub repository to file )
+
+git remote
+
+git push -u origin master
+
+git push -f origin master
