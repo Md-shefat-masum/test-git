@@ -16,9 +16,14 @@
         <h2>
             we are checking git brances
         </h2>
-        <h6>lkasdjl;kfasdl;jf</h6>
+        <h6>lkasdjl;kfasdl;jf {{}}</h6> <?php code ?>
 
-        <h1>how to commit git hub pages</h1>
+        <?php
+            Route::get('/', '@')->name('');
+            Route::post('/', '@')->name(''); 
+        ?>
+        {{}}
+        
 
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis doloremque tenetur et, odit magnam minima libero unde animi. Placeat debitis, consequuntur necessitatibus quos ipsum numquam recusandae dolore accusantium autem? Blanditiis!</p>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis doloremque tenetur et, odit magnam minima libero unde animi. Placeat debitis, consequuntur necessitatibus quos ipsum numquam recusandae dolore accusantium autem? Blanditiis!</p>

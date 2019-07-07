@@ -19,3 +19,204 @@ git remote
 git push -u origin master
 
 git push -f origin master
+
+
+snippet for vscodes
+
+html.json
+{
+    "php": {
+        "prefix": "phpr",
+        "body": [
+            "<?php ${1:code} ?>"
+        ],
+        "description": "php tag"
+    },
+
+    "php laravel": {
+        "prefix": "phpl",
+        "body": [
+            "@php ${1:code} @endphp"
+        ],
+        "description": "php laravel"
+    },
+
+    "from": {
+        "prefix": "formaction",
+        "body": [
+        "method=\"POST\" action=\"\" enctype=\"multipart/form-data\""
+        ],
+        "description": "from"
+    },
+
+    "laravel print": {
+        "prefix": "lp",
+        "body": [
+          "{{${1:code}}}"
+        ],
+        "description": "laravel print"
+      },
+
+}
+
+php.json
+
+{
+	// Place your snippets for php here. Each snippet is defined under a snippet name and has a prefix, body and 
+	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
+	// same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+
+	"laravelfunction": {
+		"prefix": "fn",
+		"body": [
+		  "public function ${1:functionName}(Request $request ${2:,$slug}){",
+		  "  //return view('${3:directory}');",
+		  "  //return view('${4:directory}',compact('${5:variablename}');",
+		  "  //return redirect()->route('');",
+		  "}"
+		],
+		"description": "laravelfunction"
+	  },
+	
+	  "construct function": {
+		"prefix": "const",
+		"body": [
+		  "public function __construct(){",
+		  "  $this->middleware('auth');",
+		  "}"
+		],
+		"description": "construct function"
+	  },
+
+	  "use plugins": {
+		"prefix": "use",
+		"body": [
+		  "use App\\ ${1:databaseName};",
+		  "use Carbon\\ Carbon;",
+		  "use Image;",
+		  "use session;",
+		  "use Auth;"
+		],
+		"description": "use plugins"
+	  },
+
+	  "basic functions": {
+		"prefix": "fns",
+		"body": [
+		  "public function index(){",
+		  "  //return view('');",
+		  "  //return view('',compact(''));",
+		  "  //return redirect('')->route('');",
+		  "}",
+		  "/* add info */",
+		  "public function addView(){",
+		  "  //return view('');",
+		  "  //return view('',compact(''));",
+		  "  //return redirect('')->route('');",
+		  "}",
+		  "public function add(){",
+		  "    \\$slug = 'donner'.uniqid(20);",
+		  "    \\$insert= ${1:databaseName}::insert([",
+		  "      '' => \\$_POST[''],",
+		  "      'slug' => \\$slug,",
+		  "      'created_at' => Carbon::now()->toDateTimeString()",
+		  "    ]);",
+		  "    if(\\$insert){",
+		  "      // return view('website.home');",
+		  "      return redirect()->route('');",
+		  "    }",
+		  "    //return view('');",
+		  "    //return redirect('')->route('');",
+		  "}",
+		  "  /* update info */",
+		  "public function updateView(Request \\$request,\\$slug){",
+		  "    //return view('');",
+		  "    //return view('',compact(''));",
+		  "    //return redirect()->route('');",
+		  "}",
+		  "            ",
+		  "public function update(Request \\$request,\\$slug){",
+		  "  \\$update=${2:databaseName}::where('slug',\\$slug)->update([",
+		  "    '' => \\$_POST[''],",
+		  "    'updated_at' => Carbon::now()->toDateTimeString()",
+		  "  ]);",
+		  "",
+		  "  if(\\$upadate){",
+		  "     return redirect()->route('');",
+		  "  }",
+		  "  //return view();",
+		  "  //return redirect()->route();",
+		  "}",
+		  "/* delete info*/",
+		  "public function softDelete(Request \\$request,\\$slug){",
+		  "  \\$soft=dbName::where('slug',$slug)->update([",
+		  "      'status'=>0,",
+		  "      'updated_at' => Carbon::now()->toDateTimeString()",
+		  "  ]);",
+		  "  if(\\$soft){",
+		  "     return redirect()->route('');",
+		  "   }",
+		  "  //return view();",
+		  "  //return redirect()->route();",
+		  "}",
+		  "public function hardDelete(Request \\$request,\\$slug){",
+		  "  \\$hard=dbName::where('slug',\\$slug)->delete();",
+		  "  if(\\$hard){",
+		  "     return redirect()->route('');",
+		  "   }",
+		  "  //return view();",
+		  "  //return redirect()->route();",
+		  "}      "
+		],
+		"description": "basic functions"
+	  },
+
+	  "add image code": {
+		"prefix": "image",
+		"body": [
+		  "if(\\$request -> hasFile('file')){",
+		  "  \\$image = \\$request->file('file');",
+		  "  \\$ImageName = 'upfile'.'_'.\\$slug.'_'.time().'.'.\\$image->getClientOriginalExtension();",
+		  "  Image::make(\\$image)->save('uploads/'.\\$ImageName);",
+		  "  dbname::where('slug',\\$slug)->update([",
+		  "    'image' => \\$ImageName",
+		  "  ]);",
+		  "}"
+		],
+		"description": "add image code"
+	  },
+
+	  "get route": {
+		"prefix": "getr",
+		"body": [
+		  "Route::get('/', '@')->name('');"
+		],
+		"description": "get route"
+	  },
+
+	  "post route": {
+		"prefix": "postr",
+		"body": [
+		  "Route::post('/', '@')->name('');"
+		],
+		"description": "post route"
+	  },
+
+	  "from": {
+		"prefix": "forma",
+		"body": [
+		  "method=\"POST\" action=\"\" enctype=\"multipart/form-data\""
+		],
+		"description": "from"
+	  },
+}
