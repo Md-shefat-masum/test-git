@@ -62,3 +62,9 @@ _A list of my commonly used Git commands_
 | `git log` | View changes |
 | `git log --summary` | View changes (detailed) |
 | `git diff [source branch] [target branch]` | Preview changes before merging |
+
+post_max_size = 800M 
+upload_max_filesize = 800M 
+max_execution_time = 5000 
+max_input_time = 5000 
+memory_limit = 1000M 
