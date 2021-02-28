@@ -1,6 +1,6 @@
 git config --global user.name 'Md-shefat-masum'
 
-git config --global user.email 'myphoto240@gmail.com'
+git config --global user.email 'mshefat924@gmail.com'
 
 git add .  (this command all all files)
 
